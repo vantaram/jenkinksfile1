@@ -1,0 +1,21 @@
+node {
+    stage('git clone) { 
+	git credentialsId: 'github1', url: 'https://github.com/vantaram/santosh1.git'
+       
+    }
+    stage('maven clean') {
+    powershell 'mvn clean'  	
+    }
+	stage('maven validate') {
+    powershell 'mvn validate '  	
+    }
+	stage('maven complile') {
+    powershell 'mvn compile'  	
+    }
+	stage('maven test') {
+    powershell 'mvn test'  	
+    }
+	stage('maven package) {
+    powershell 'mvn package'  	
+    }
+}
